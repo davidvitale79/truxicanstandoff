@@ -34,6 +34,7 @@ class WeaponFactory:
     def __str__(self):
         return f"Weapon(name={self.name}, damage={self.damage})"
 
+
     def create_weapon(self, weapons: Dict[str,any]) -> Weapon:
         required_keys = {'name', 'weapon_type', 'damage', 'crit', 'value'}
         if not required_keys.issubset(weapons.keys()):
@@ -64,9 +65,10 @@ weapons = [
     {"name": "Dagger", "weapon_type": "Sharp", "damage": 3, "crit": 4, "value": 4},
     {"name": "Iron Sword", "weapon_type": "Sharp", "damage": 5, "crit": 7, "value": 10},
     {"name": "Short Bow", "weapon_type": "Ranged", "damage": 4, "crit": 6, "value": 7},
-    {"name": "Brass Knuckles", "weapon_type": "Blunt", "damage": 2, "crit": 5, "value": 0},
+    {"name": "Brass Knuckles", "weapon_type": "Blunt", "damage": 3, "crit": 5, "value": 0},
     {"name": "Silver Sword", "weapon_type": "Sharp", "damage": 6, "crit": 8, "value": 12},
-    {"name": "War Hammer", "weapon_type": "Blunt", "damage": 10, "crit": 6, "value": 8}
+    {"name": "War Hammer", "weapon_type": "Blunt", "damage": 10, "crit": 6, "value": 8},
+    {"name": "Fists", "weapon_type": "Blunt", "damage": 2, "crit": 2, "value": 0}
 ]
 
 
@@ -95,6 +97,7 @@ random_weapon3 = {
 }
 
 
+
 weapon_factory = WeaponFactory()
 random_weapon1 = weapon_factory.create_weapon(random_weapon1)
 random_weapon2 = weapon_factory.create_weapon(random_weapon2)
@@ -120,3 +123,4 @@ short_bow = Weapon(name='Short Bow', weapon_type='Ranged', damage=4, crit=6, val
 brass_knuckles = Weapon(name='Brass Knuckles', weapon_type='Blunt', damage=2, crit=5, value=0)
 silver_sword = Weapon(name='Silver Sword', weapon_type='Sharp', damage=6, crit=8, value=12)
 war_hammer = Weapon(name='War Hammer', weapon_type='Blunt', damage=10, crit=6, value=8)
+fists = Weapon(name='Fists', weapon_type='Blunt', damage=2, crit=2, value=0)
